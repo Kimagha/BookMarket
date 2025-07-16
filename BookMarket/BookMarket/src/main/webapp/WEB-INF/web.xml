@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
+  <display-name>BookMarket</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+	<security-role>
+  		<description></description>
+  		<role-name>user</role-name>
+  </security-role>
+  <security-constraint>
+  		<display-name>BookMarket Security</display-name>
+  		
+  		<web-resource-collection>
+  			<web-resource-name>BookMarket</web-resource-name>
+  			<description></description>
+  			<url-pattern>/addBook.jsp</url-pattern>
+  			<url-pattern>/editBook.jsp</url-pattern>
+  			<url-pattern>/editBook.jsp</url-pattern>
+  		</web-resource-collection>
+  		
+  		<auth-constraint>
+  			<description>권한 관리자명</description>
+  			<role-name>user</role-name>
+  		</auth-constraint>
+  		
+  </security-constraint>
+  <login-config>
+  	<auth-method>FORM</auth-method>
+  	<form-login-config>
+  		<form-login-page>/login.jsp</form-login-page>
+  		<form-error-page>/login_failed.jsp</form-error-page>
+  	</form-login-config>
+  </login-config>
+
+	<servlet>
+    <servlet-name>BoardController</servlet-name>
+    <servlet-class>mvc.controller.BoardController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>BoardController</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <filter>
+  	<filter-name>LogFileFilter</filter-name>
+  	<filter-class>filter.LogFileFilter</filter-class>
+  	
+  </filter>
+  <filter-mapping>
+  	<filter-name>LogFileFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/exceptionNoBookId.jsp</location>
+  </error-page>
+  
+  
+</web-app>
