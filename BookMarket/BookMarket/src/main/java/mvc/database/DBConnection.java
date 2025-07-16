@@ -10,14 +10,14 @@ public class DBConnection {
 		 Connection conn=null;
 		 
 		 String url;
-		 String user = "kjj123000"; 
-		 String password = "199eh118^^";
+		 String user = "아이디"; 
+		 String password = "비밀번호";
 		 
 		 boolean isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows");
 		  
 		  if(isWindows) url = "jdbc:mysql://localhost:3306/BookMarketDB";
 		  
-		  else url = "jdbc:mysql://localhost:3306/kjj123000db?serverTimezone=UTC&characterEncoding=utf8";
+		  else url = "jdbc:mysql://localhost:3306/아이디db?serverTimezone=UTC&characterEncoding=utf8";
 		  
 		  Class.forName("com.mysql.jdbc.Driver");
 		  conn=DriverManager.getConnection(url, user, password);
