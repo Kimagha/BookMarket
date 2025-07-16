@@ -7,14 +7,14 @@
 
 	try {
 			String url;
-		  String user = "kjj123000";           // 본인 id
-		  String password = "199eh118^^";   // 본인 암호
+		  String user = "아이디";           // 본인 id
+		  String password = "비밀번호";   // 본인 암호
 
 		  boolean isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows");
 		  // 윈도우 서버
 		  if(isWindows) url = "jdbc:mysql://localhost:3306/BookMarketDB";
 		  // 우분투 서버  (DB서버 주소는 localhost 임)
-		  else url = "jdbc:mysql://localhost:3306/kjj123000db?serverTimezone=UTC&characterEncoding=utf8"; 
+		  else url = "jdbc:mysql://localhost:3306/아이디db?serverTimezone=UTC&characterEncoding=utf8"; 
 		  
 		  
 		
