@@ -46,6 +46,7 @@
 
 
 ### Database
+> MySQL
 
 ### IDE/환경 
 > Eclipse, WAR 파일 배포 방식
